@@ -1,0 +1,48 @@
+public class MiniMax {
+
+static int Min(int arr[],int n)
+{
+    int sum=0,min=0;
+    for(int i=0;i<n;i++) {
+        sum = arr[i] + sum;
+
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+
+    }
+
+    min=sum-arr[n-1];
+    return min;
+}
+static  int Max(int arr[],int n)
+{
+    int sum=0,max=0;
+    for(int i=0;i<n;i++)
+    {
+        sum=arr[i]+sum;
+        if(arr[i]>max)
+        {
+            max=arr[i];
+        }
+    }
+    max=sum-arr[0];
+    return  max;
+}
+
+
+    public static void main(String args[])
+    {
+
+
+
+        int arr[]={1,2,3,4,5};
+        int n=arr.length;
+        int l=Min(arr,n);
+        int m=Max(arr,n);
+
+System.out.println(l+" "+m);
+
+    }
+
+}
